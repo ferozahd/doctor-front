@@ -1,0 +1,19 @@
+<div class="w-full h-full  d-center">
+    <div class="login-card">
+        <div *ngIf="formErrors.size>0">
+             <ul>
+            <li>y</li>
+            <!-- <li *ngFor="let entry of formErrors">{{ entry.key }}: {{ entry.value }}</li> -->
+          </ul></div>
+        
+        <h2>Login</h2>
+        <form [formGroup]="authFormGroup.login" (ngSubmit)="loginSubmit()">
+            <label for="username">Username:</label>
+            <input type="text" formControlName="email" required="">
+            <label for="password">Password:</label>
+            <input type="password" formControlName="password"  required="">
+            <input type="submit" value="Login">
+        </form>
+        <p class="register"> Don't have account ? <a routerLink="/auth/signup"><span>sign up</span></a></p>
+    </div>
+</div>
